@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class HttpService<T> {
     
-    root: string = '/api/';
+    root: string = 'http://localhost:5193/api/';;
 
     get path(): string { return this.root + this.endpoint };
 

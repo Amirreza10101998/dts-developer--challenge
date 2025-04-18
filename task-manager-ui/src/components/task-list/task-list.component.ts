@@ -27,6 +27,7 @@ export class TaskListComponent {
     this.taskService.getAll().subscribe({
       next: (data) => {
         this.tasks = data;
+        console.log('Tasks loaded:', this.tasks);
         this.isLoading = false;
       },
       error: (error) => {
