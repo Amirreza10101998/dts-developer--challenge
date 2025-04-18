@@ -26,20 +26,14 @@ namespace TaskManagement.API.Controllers
         /// <summary>
         /// Create a new task item
         /// </summary>
-        /// <returns></returns>
+        /// <response code="200">Returns all task items</response>
         [HttpGet]
         public async Task<IActionResult> GetAllTaskItems()
         {
-            try 
+            try
             {
                 var taskItems = await _taskService.GetAllTaskItems();
-                
-                if (taskItems == null || !taskItems.Any())
-                {
-                    return NotFound("No task items found");
-                }
-
-                return Ok(taskItems);
+                return Ok(taskItems ?? new List<TaskItem>()); // Always return a list
             }
             catch (Exception ex)
             {
@@ -52,29 +46,23 @@ namespace TaskManagement.API.Controllers
         /// Get a task item by ID
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <response code="200">Returns the requested task item</response>
+        /// <response code="400">Invalid ID format</response>
+        /// <response code="404">Task item not found</response>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaskItemById(int id)
         {
             try 
             {
-                if(id <= 0)
-                {
-                    return BadRequest("Invalid ID");
-                }
+                if (id <= 0) return BadRequest("Invalid ID format");
 
                 var taskItem = await _taskService.GetTaskItemById(id);
 
-                if(taskItem == null)
-                {
-                    return NotFound($"Task item with ID {id} not found");
-                }
-
-                return Ok(taskItem);
+                return taskItem != null ? Ok(taskItem) : NotFound();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error occurred while getting task item with ID {id}");
+                _logger.LogError(ex, $"Error getting task item {id}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -83,12 +71,24 @@ namespace TaskManagement.API.Controllers
         /// Create a new task item
         /// </summary>
         /// <param name="task"></param>
-        /// <returns></returns>
+        /// <response code="201">Returns the created task item</response>
+        /// <response code="400">Invalid input data</response>
         [HttpPost]
         public async Task<IActionResult> CreateTaskItem([FromBody] TaskItem task)
         {
-            await _taskService.CreateTaskItem(task);
-            return Ok();
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                var createdTask = await _taskService.CreateTaskItem(task);
+                return CreatedAtAction(nameof(GetTaskItemById), new { id = createdTask.Id }, createdTask);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating task item");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         /// <summary>
@@ -96,35 +96,23 @@ namespace TaskManagement.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <param name="task"></param>
-        /// <returns></returns>
+        /// <response code="200">Task item updated</response>
+        /// <response code="400">Invalid input data</response>
+        /// <response code="404">Task item not found</response>
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateTaskItem(int id, [FromBody] TaskItem task)
         {
             try
             {
-                if (id <= 0)
-                {
-                    return BadRequest("Invalid ID");
-                }
+                if (id <= 0) return BadRequest("Invalid ID format");
+                if (!ModelState.IsValid) return BadRequest(ModelState);
 
-                var taskItem = await _taskService.GetTaskItemById(id);
-                if (taskItem == null)
-                {
-                    return NotFound($"Task item with ID {id} not found");
-                }
-
-                taskItem.Status = task.Status;
-                var result = await _taskService.UpdateTaskItem(taskItem);
-                if (result == null)
-                {
-                    return BadRequest("Failed to update task item");
-                }
-
-                return Ok(taskItem);
+                var result = await _taskService.UpdateTaskItemStatus(id, task.Status);
+                return result ? Ok() : NotFound();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error occurred while updating task item with ID {id}");
+                _logger.LogError(ex, $"Error updating status for task {id}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -133,30 +121,18 @@ namespace TaskManagement.API.Controllers
         /// Delete a task item
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <response code="204">Task item deleted</response>
+        /// <response code="400">Invalid ID format</response>
+        /// <response code="404">Task item not found</response>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTaskItem(int id)
         {
             try
             {
-                if (id <= 0)
-                {
-                    return BadRequest("Invalid ID");
-                }
-
-                var taskItem = await _taskService.GetTaskItemById(id);
-                if (taskItem == null)
-                {
-                    return NotFound($"Task item with ID {id} not found");
-                }
-
+                if (id <= 0) return BadRequest("Invalid ID format");
+                
                 var result = await _taskService.DeleteTaskItem(id);
-                if (!result)
-                {
-                    return BadRequest("Failed to delete task item");
-                }
-
-                return NoContent();
+                return result ? NoContent() : NotFound();
             }
             catch (Exception ex)
             {
