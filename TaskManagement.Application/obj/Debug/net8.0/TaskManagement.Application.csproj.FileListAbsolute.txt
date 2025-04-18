@@ -1,0 +1,15 @@
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.deps.json
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Application.pdb
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Domain.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/bin/Debug/net8.0/TaskManagement.Domain.pdb
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.csproj.AssemblyReference.cache
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.AssemblyInfoInputs.cache
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.AssemblyInfo.cs
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.csproj.CoreCompileInputs.cache
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskMana.B5C26166.Up2Date
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/refint/TaskManagement.Application.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.pdb
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/ref/TaskManagement.Application.dll
