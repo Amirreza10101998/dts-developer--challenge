@@ -58,11 +58,11 @@ export class TaskListComponent{
 
   navigateToAddTask() {
     window.location.href = '/tasks/add';
-  }
+  };
 
   naviageteToEditTask(taskId: number) {
     window.location.href = `/tasks/edit/${taskId}`;
-  } 
+  };
   
   getStatusText(status: number): string {
     switch(status) {
@@ -72,8 +72,8 @@ export class TaskListComponent{
     case 3: return 'On Hold';
     case 4: return 'Cancelled';
     default: return 'Unknown';
-    }
-  }
+    };
+  };
   
   getStatusClass(status: number): string {
   switch(status) {
@@ -83,6 +83,6 @@ export class TaskListComponent{
     case 3: return 'bg-warning text-dark'; // On Hold
     case 4: return 'bg-danger';    // Cancelled
     default: return 'bg-light text-dark';
-    }
-  }
+    };
+  };
 }
