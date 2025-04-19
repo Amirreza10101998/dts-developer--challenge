@@ -32,12 +32,16 @@
                     <td>{{ task.title }}</td>
                     <td>{{ task.description }}</td>
                     <td>{{ task.dueDate}}</td>
-                    <td><span class="badge bg-warning text-dark">Pending</span></td>
                     <td>
-                        <button (click)="naviageteToEditTask(task.id)" class="btn btn-sm btn-outline-primary me-1">
+                        <span class="badge" [class]="getStatusClass(task.status)">
+                          {{ getStatusText(task.status) }}
+                        </span>
+                      </td>
+                    <td>
+                        <button (click)="task.id && naviageteToEditTask(task.id)" class="btn btn-sm btn-outline-primary me-1">
                             <span class="material-icons">edit</span>
                         </button>
-                        <button class="btn btn-sm btn-outline-danger">
+                        <button (click)="task.id && deleteTask(task.id)" class="btn btn-sm btn-outline-danger">
                             <span class="material-icons">delete</span>
                         </button>
                     </td>

@@ -15,7 +15,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
 })
-export class TaskListComponent {
+export class TaskListComponent{
 
   constructor(private taskService: TaskService) {}
   tasks: TaskItem[] = [];
@@ -41,6 +41,21 @@ export class TaskListComponent {
     });
   };
 
+  deleteTask(taskId:number){
+    this.isLoading = true;
+    this.taskService.remove(taskId).subscribe({
+      next: () => {
+        console.log('Task deleted:', taskId);
+        this.loadTaskItems();
+        this.isLoading = false;
+        },
+      error: (error) => {
+        console.error('Error deleting task:', error);
+        this.isLoading = false;
+      }
+    });
+  };
+
   navigateToAddTask() {
     window.location.href = '/tasks/add';
   }
@@ -48,4 +63,26 @@ export class TaskListComponent {
   naviageteToEditTask(taskId: number) {
     window.location.href = `/tasks/edit/${taskId}`;
   } 
+  
+  getStatusText(status: number): string {
+    switch(status) {
+    case 0: return 'Not Started';
+    case 1: return 'In Progress';
+    case 2: return 'Completed';
+    case 3: return 'On Hold';
+    case 4: return 'Cancelled';
+    default: return 'Unknown';
+    }
+  }
+  
+  getStatusClass(status: number): string {
+  switch(status) {
+    case 0: return 'bg-secondary'; // Not Started
+    case 1: return 'bg-primary';   // In Progress
+    case 2: return 'bg-success';   // Completed
+    case 3: return 'bg-warning text-dark'; // On Hold
+    case 4: return 'bg-danger';    // Cancelled
+    default: return 'bg-light text-dark';
+    }
+  }
 }

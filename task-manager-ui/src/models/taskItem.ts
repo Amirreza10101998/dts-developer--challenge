@@ -1,10 +1,10 @@
 import { TaskItemStatus } from "./taskItemStatus";
 
 export interface TaskItem {
-    id: number;
+    id?: number;
     title: string;
     description?: string;
     status: TaskItemStatus;
-    createdAt: Date;
+    createdAt?: Date;
     dueDate?: Date;
 }
