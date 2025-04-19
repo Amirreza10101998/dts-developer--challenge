@@ -1,10 +1,10 @@
 // http.service.ts
 import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class HttpService<T> {
     
-    root: string = 'http://localhost:5193/api/';;
+    root: string = 'http://localhost:5193/api/';
 
     get path(): string { return this.root + this.endpoint };
 
@@ -19,7 +19,15 @@ export class HttpService<T> {
     }
 
     update(id: number, entity: T): Observable<T> {
-        return this.http.put<T>(`${this.path}/${id}`, entity);
+        return this.http.patch<T>(
+            `${this.path}/${id}`, 
+            this.preparePayload(entity),
+            {
+                headers: new HttpHeaders({
+                    'Content-Type': 'application/json',
+                })
+          }
+        );
     }
 
     create(entity: T): Observable<T> {
@@ -28,5 +36,15 @@ export class HttpService<T> {
 
     remove(id: number): Observable<any> {
         return this.http.delete<T>(`${this.path}/${id}`);
+    }
+
+    private preparePayload(entity: any): any {
+        if (entity.dueDate instanceof Date) {
+            return {
+                ...entity,
+                dueDate: entity.dueDate.toISOString()
+            };
+        }
+        return entity;
     }
 }

@@ -43,7 +43,7 @@ app.UseRouting();
 app.UseCors("AllowAngular");
 app.MapControllers();
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

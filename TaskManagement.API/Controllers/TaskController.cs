@@ -109,7 +109,7 @@ namespace TaskManagement.API.Controllers
                 if (id <= 0) return BadRequest("Invalid ID format");
                 if (!ModelState.IsValid) return BadRequest(ModelState);
 
-                var result = await _taskService.UpdateTaskItemStatus(id, task.Status);
+                var result = await _taskService.UpdateTaskItem(id, task);
                 return result ? Ok() : NotFound();
             }
             catch (Exception ex)

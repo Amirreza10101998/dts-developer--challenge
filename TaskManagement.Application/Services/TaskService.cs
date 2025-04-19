@@ -28,10 +28,18 @@ namespace TaskManagement.Application.Services
         {
             return await _taskRepository.CreateTaskItem(task);
         }
-
-        public async Task<TaskItem> UpdateTaskItem(TaskItem task)
+        
+        public async Task<bool> UpdateTaskItem(int id, TaskItem updatedTask)
         {
-            return await _taskRepository.UpdateTaskItem(task);
+            var existingTask = await _taskRepository.GetTaskItemById(id); 
+            if (existingTask == null) return false;
+            
+            existingTask.Title = updatedTask.Title;
+            existingTask.Description = updatedTask.Description;
+            existingTask.DueDate = updatedTask.DueDate;
+            existingTask.Status = updatedTask.Status;
+            await _taskRepository.UpdateTaskItem(existingTask); 
+            return true;
         }
 
         public async Task<bool> UpdateTaskItemStatus(int id, TaskItemStatus newStatus)

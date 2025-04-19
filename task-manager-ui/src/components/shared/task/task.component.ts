@@ -114,7 +114,7 @@ export class TaskComponent implements OnInit {
       ...this.currentTask,
       title: formValue.title ?? this.currentTask.title,
       description: formValue.description || undefined,
-      status: formValue.status ?? this.currentTask.status,
+      status: Number(formValue.status),
       dueDate: formValue.dueDate ? new Date(formValue.dueDate) : undefined,
       id: this.taskId
     };
