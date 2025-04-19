@@ -27,7 +27,7 @@ A system for HMCTS caseworkers to manage their tasks with API and frontend compo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/amashaik/task-management-system.git
+   git clone https://github.com/Amirreza10101998/dts-developer--challenge
    cd task-management-system
  
 2. Backend Setup: 
