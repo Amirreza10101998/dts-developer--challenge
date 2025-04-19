@@ -1,0 +1,51 @@
+<body>
+<div class="container">
+    <div class="d-flex justify-content-end">
+    <button  (click)="backToTaskList()" style="width: fit-content;"  type="button" class="btn btn-outline-secondary btn-with-icon mb-3">
+        <span class="material-icons">arrow_back</span>Back
+    </button>
+    </div>
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><span class="material-icons">check</span>Add New Task</h5>
+        </div>
+        <div class="card-body">
+
+            <form>
+                <div class="mb-3">
+                    <label for="taskTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="taskTitle" placeholder="Enter task title">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="taskDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="taskDescription" rows="3" placeholder="Enter task description"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="taskDueDate" class="form-label">Due Date</label>
+                    <input type="datetime-local" class="form-control" id="taskDueDate">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="taskStatus" class="form-label">Status</label>
+                    <select class="form-select" id="taskStatus">
+                        <option value="0" selected>Pending</option>
+                        <option value="1">In Progress</option>
+                        <option value="2">Completed</option>
+                    </select>
+                </div>
+                
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-secondary btn-with-icon">
+                        <span class="material-icons">cancel</span>Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-with-icon">
+                        <span class="material-icons">save</span>Save Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

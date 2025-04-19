@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.card {
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.table-responsive {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+.table {
+    margin-bottom: 0;
+}
+.badge {
+    font-size: 0.85em;
+}
+/* Material Icons Styling */
+.material-icons {
+    font-size: 18px;
+    vertical-align: middle;
+    line-height: 1;
+    position: relative;
+    top: -1px;
+}
+/* Button with icon styling */
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.btn-with-icon .material-icons {
+    margin-right: 2px;
+}
+/* Header icon styling */
+.card-header .material-icons {
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: text-top;
+}
+/* Section heading icon styling */
+h4 .material-icons {
+    margin-right: 5px;
+    vertical-align: text-top;
+}
+/* Icons in table action buttons */
+.table .material-icons {
+    font-size: 16px;
+}
+.table .btn {
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

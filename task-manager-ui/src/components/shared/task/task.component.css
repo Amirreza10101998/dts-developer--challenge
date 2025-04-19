@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    background-color: #f8f9fa;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.card-header {
+    border-bottom: none;
+}
+.material-icons {
+    font-size: 18px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.card-header .material-icons {
+    font-size: 20px;
+    margin-right: 8px;
+}
+.form-label {
+    font-weight: 500;
+}
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
