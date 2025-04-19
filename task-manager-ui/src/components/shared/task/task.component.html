@@ -12,45 +12,56 @@
         </div>
         <div class="card-body">
 
-            <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-                <div class="mb-3">
-                  <label for="taskTitle" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="taskTitle" 
-                         formControlName="title" placeholder="Enter task title">
+          <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="taskTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="taskTitle" 
+                     formControlName="title" placeholder="Enter task title">
+              <div *ngIf="taskForm.get('title')?.touched && taskForm.get('title')?.invalid" class="text-danger">
+                <div *ngIf="taskForm.get('title')?.errors?.['required']">
+                  Title is required
                 </div>
-                
-                <div class="mb-3">
-                  <label for="taskDescription" class="form-label">Description</label>
-                  <textarea class="form-control" id="taskDescription" rows="3" 
-                            formControlName="description" placeholder="Enter task description"></textarea>
+                <div *ngIf="taskForm.get('title')?.errors?.['minlength']">
+                  Title must be at least 3 characters long
                 </div>
-                
-                <div class="mb-3">
-                  <label for="taskDueDate" class="form-label">Due Date</label>
-                  <input type="datetime-local" class="form-control" id="taskDueDate"
-                         formControlName="dueDate">
-                </div>
-                
-                <div class="mb-3">
-                    <label for="taskStatus" class="form-label">Status</label>
-                    <select class="form-select" id="taskStatus" formControlName="status">
-                      <option value="0">Not Started</option>
-                      <option value="1">In Progress</option>
-                      <option value="2">Completed</option>
-                      <option value="3">On Hold</option>
-                      <option value="4">Cancelled</option>
-                    </select>
-                  </div>
-                
-                <div class="d-flex justify-content-end gap-2">
-                  <button type="button" class="btn btn-outline-secondary btn-with-icon">
-                    <span class="material-icons">cancel</span>Cancel
-                  </button>
-                  <button type="submit" class="btn btn-primary btn-with-icon">
-                    <span class="material-icons">save</span>Save Task
-                  </button>
-                </div>
-              </form>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="taskDescription" rows="3" 
+                        formControlName="description" placeholder="Enter task description"></textarea>
+            </div>
+            
+            <div class="mb-3">
+              <label for="taskDueDate" class="form-label">Due Date</label>
+              <input type="datetime-local" class="form-control" id="taskDueDate"
+                     formControlName="dueDate">
+              <div *ngIf="taskForm.get('dueDate')?.touched && taskForm.get('dueDate')?.invalid" class="text-danger">
+                Due date is required
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="taskStatus" class="form-label">Status</label>
+              <select class="form-select" id="taskStatus" formControlName="status">
+                <option value="0">Not Started</option>
+                <option value="1">In Progress</option>
+                <option value="2">Completed</option>
+                <option value="3">On Hold</option>
+                <option value="4">Cancelled</option>
+              </select>
+              <div *ngIf="taskForm.get('status')?.touched && taskForm.get('status')?.invalid" class="text-danger">
+                Status is required
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-end gap-2">
+              <button type="submit" class="btn btn-primary btn-with-icon" [disabled]="taskForm.invalid && taskForm.touched">
+                <span class="material-icons">save</span>Save Task
+              </button>
+            </div>
+          </form>
         </div>
     </div>
 </div>

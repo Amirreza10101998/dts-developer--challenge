@@ -13,11 +13,12 @@ import { TaskItemStatus } from '../../../models/taskItemStatus';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
+
 export class TaskComponent implements OnInit {
   constructor(
     private taskService: TaskService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) { }
 
   isEdit: boolean = false;
@@ -36,8 +37,8 @@ export class TaskComponent implements OnInit {
   taskForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     description: new FormControl(''),
-    dueDate: new FormControl<Date | null>(null),
-    status: new FormControl<TaskItemStatus>(TaskItemStatus.NotStarted)
+    dueDate: new FormControl<string | null>(null, [Validators.required]),
+    status: new FormControl<TaskItemStatus>(TaskItemStatus.NotStarted, [Validators.required])
   });
 
   ngOnInit(): void {
@@ -46,9 +47,9 @@ export class TaskComponent implements OnInit {
         this.taskId = +params['id'];
         this.isEdit = true;
         this.loadTaskForEdit();
-      }
+      };
     });
-  }
+  };
 
   loadTaskForEdit(): void {
     if (!this.taskId) return;
@@ -61,26 +62,36 @@ export class TaskComponent implements OnInit {
           title: task.title,
           description: task.description || '',
           status: task.status,
-          dueDate: task.dueDate ? new Date(task.dueDate) : null
+          dueDate: task.dueDate ? this.formatDateForInput(new Date(task.dueDate)) : ''
         });
         this.isLoading = false;
       },
       error: (error) => {
         console.error('Error loading task:', error);
         this.isLoading = false;
-        // Optionally navigate back or show error message
       }
     });
-  }
+  };
+
+  private formatDateForInput(date: Date): string {
+    const pad = (n: number) => n.toString().padStart(2, '0');
+    const yyyy = date.getFullYear();
+    const MM = pad(date.getMonth() + 1);
+    const dd = pad(date.getDate());
+    const hh = pad(date.getHours());
+    const mm = pad(date.getMinutes());
+    return `${yyyy}-${MM}-${dd}T${hh}:${mm}`;
+  };
+  
 
   onSubmit(): void {
     if (this.taskForm.invalid) {
       this.taskForm.markAllAsTouched();
       return;
-    }
+    };
 
     this.isEdit ? this.updateTask() : this.createTask();
-  }
+  };
 
   createTask(): void {
     this.isLoading = true;
@@ -103,7 +114,7 @@ export class TaskComponent implements OnInit {
         this.isLoading = false;
       }
     });
-  }
+  };
 
   updateTask(): void {
     if (!this.taskId || !this.currentTask) return;
@@ -129,16 +140,16 @@ export class TaskComponent implements OnInit {
         this.isLoading = false;
       }
     });
-  }
+  };
 
   navigateToTaskList(): void {
     this.router.navigate(['/tasks']);
-  }
+  };
 
   getStatusText(status: TaskItemStatus): string {
     const option = this.statusOptions.find(opt => opt.value === status);
     return option ? option.label : 'Unknown';
-  }
+  };
 
   getStatusClass(status: TaskItemStatus): string {
     switch(status) {
@@ -148,6 +159,6 @@ export class TaskComponent implements OnInit {
       case TaskItemStatus.OnHold: return 'bg-warning text-dark';
       case TaskItemStatus.Cancelled: return 'bg-danger';
       default: return 'bg-light text-dark';
-    }
-  }
+    };
+  };
 }
