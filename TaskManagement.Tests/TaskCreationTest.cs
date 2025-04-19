@@ -144,114 +144,112 @@ public class TaskControllerTests
     }
 
     [Fact]
-public async Task UpdateTaskItem_ReturnsOkResult_WhenUpdateIsSuccessful()
-{
-    // Arrange
-    var testId = 1;
-    var updatedTask = new TaskItem { Id = testId, Title = "Updated Task" };
+    public async Task UpdateTaskItem_ReturnsOkResult_WhenUpdateIsSuccessful()
+    {
+        // Arrange
+        var testId = 1;
+        var updatedTask = new TaskItem { Id = testId, Title = "Updated Task" };
+        
+        _mockTaskService.Setup(service => service.UpdateTaskItem(testId, updatedTask))
+            .ReturnsAsync(true);
+
+        // Act
+        var result = await _controller.UpdateTaskItem(testId, updatedTask);
+
+        // Assert
+        result.Should().BeOfType<OkResult>();
+    }
     
-    _mockTaskService.Setup(service => service.UpdateTaskItem(testId, updatedTask))
-        .ReturnsAsync(true);
+    [Fact]
+    public async Task UpdateTaskItem_ReturnsNotFound_WhenTaskDoesNotExist()
+    {
+        // Arrange
+        var testId = 1;
+        var updatedTask = new TaskItem { Id = testId, Title = "Updated Task" };
+        
+        _mockTaskService.Setup(service => service.UpdateTaskItem(testId, updatedTask))
+            .ReturnsAsync(false);
 
-    // Act
-    var result = await _controller.UpdateTaskItem(testId, updatedTask);
+        // Act
+        var result = await _controller.UpdateTaskItem(testId, updatedTask);
 
-    // Assert
-    result.Should().BeOfType<OkResult>();
-}
-
-[Fact]
-public async Task UpdateTaskItem_ReturnsNotFound_WhenTaskDoesNotExist()
-{
-    // Arrange
-    var testId = 1;
-    var updatedTask = new TaskItem { Id = testId, Title = "Updated Task" };
+        // Assert
+        result.Should().BeOfType<NotFoundResult>();
+    }
     
-    _mockTaskService.Setup(service => service.UpdateTaskItem(testId, updatedTask))
-        .ReturnsAsync(false);
+    [Fact]
+    public async Task UpdateTaskItem_ReturnsBadRequest_WhenIdIsInvalid()
+    {
+        // Arrange
+        var invalidId = 0;
+        var updatedTask = new TaskItem { Id = 1, Title = "Updated Task" };
+        
+        // Act
+        var result = await _controller.UpdateTaskItem(invalidId, updatedTask);
 
-    // Act
-    var result = await _controller.UpdateTaskItem(testId, updatedTask);
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+    }
+    
+    [Fact]
+    public async Task DeleteTaskItem_ReturnsNoContent_WhenDeleteIsSuccessful()
+    {
+        // Arrange
+        var testId = 1;
 
-    // Assert
-    result.Should().BeOfType<NotFoundResult>();
-}
+        _mockTaskService.Setup(service => service.DeleteTaskItem(testId))
+            .ReturnsAsync(true);
 
-[Fact]
-public async Task UpdateTaskItem_ReturnsBadRequest_WhenIdIsInvalid()
-{
-    // Arrange
-    var invalidId = 0;
-    var updatedTask = new TaskItem { Id = 1, Title = "Updated Task" };
+        // Act
+        var result = await _controller.DeleteTaskItem(testId);
 
-    // Act
-    var result = await _controller.UpdateTaskItem(invalidId, updatedTask);
+        // Assert
+        result.Should().BeOfType<NoContentResult>();
+  }
+  
+  [Fact]
+   public async Task DeleteTaskItem_ReturnsNotFound_WhenTaskDoesNotExist()
+   {
+        // Arrange
+        var testId = 1;
+        
+        _mockTaskService.Setup(service => service.DeleteTaskItem(testId))
+            .ReturnsAsync(false);
 
-    // Assert
-    result.Should().BeOfType<BadRequestObjectResult>();
-}
+        // Act
+        var result = await _controller.DeleteTaskItem(testId);
 
-[Fact]
-public async Task DeleteTaskItem_ReturnsNoContent_WhenDeleteIsSuccessful()
-{
-    // Arrange
-    var testId = 1;
-    _mockTaskService.Setup(service => service.DeleteTaskItem(testId))
-        .ReturnsAsync(true);
+        // Assert
+        result.Should().BeOfType<NotFoundResult>();
+    }
+    
+    [Fact]
+    public async Task DeleteTaskItem_ReturnsBadRequest_WhenIdIsInvalid()
+    {
+        // Arrange
+        var invalidId = 0;
 
-    // Act
-    var result = await _controller.DeleteTaskItem(testId);
+        // Act
+        var result = await _controller.DeleteTaskItem(invalidId);
+        
+        // Assert
+        result.Should().BeOfType<BadRequestObjectResult>();
+    }
+    
+    [Fact]
+    public async Task GetAllTaskItems_ReturnsStatusCode500_WhenExceptionOccurs()
+    {
+        // Arrange
+        _mockTaskService.Setup(service => service.GetAllTaskItems())
+            .ThrowsAsync(new Exception("Test exception"));
 
-    // Assert
-    result.Should().BeOfType<NoContentResult>();
-}
+        // Act
+        var result = await _controller.GetAllTaskItems();
 
-[Fact]
-public async Task DeleteTaskItem_ReturnsNotFound_WhenTaskDoesNotExist()
-{
-    // Arrange
-    var testId = 1;
-    _mockTaskService.Setup(service => service.DeleteTaskItem(testId))
-        .ReturnsAsync(false);
-
-    // Act
-    var result = await _controller.DeleteTaskItem(testId);
-
-    // Assert
-    result.Should().BeOfType<NotFoundResult>();
-}
-
-[Fact]
-public async Task DeleteTaskItem_ReturnsBadRequest_WhenIdIsInvalid()
-{
-    // Arrange
-    var invalidId = 0;
-
-    // Act
-    var result = await _controller.DeleteTaskItem(invalidId);
-
-    // Assert
-    result.Should().BeOfType<BadRequestObjectResult>();
-}
-
-[Fact]
-public async Task GetAllTaskItems_ReturnsStatusCode500_WhenExceptionOccurs()
-{
-    // Arrange
-    _mockTaskService.Setup(service => service.GetAllTaskItems())
-        .ThrowsAsync(new Exception("Test exception"));
-
-    // Act
-    var result = await _controller.GetAllTaskItems();
-
-    // Assert
-    result.Should().BeOfType<ObjectResult>();
-    var objectResult = result as ObjectResult;
-    objectResult.StatusCode.Should().Be(500);
-}
-
-
-
-
-
+        // Assert
+        result.Should().BeOfType<ObjectResult>();
+        var objectResult = result as ObjectResult;
+        objectResult.StatusCode.Should().Be(500);
+    }
+    
 }
