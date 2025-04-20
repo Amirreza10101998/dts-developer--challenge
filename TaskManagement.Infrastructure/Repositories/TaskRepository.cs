@@ -32,22 +32,12 @@ namespace TaskManagement.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return task;
         }
-
-        public async Task<TaskItem> UpdateTaskItem(TaskItem task)
+        
+        public async Task<bool> UpdateTaskItem(TaskItem task)
         {
-            var existingTask = await _context.TaskItems.FindAsync(task.Id);
-            if (existingTask == null)
-            {
-                return null;
-            }
-
-            existingTask.Title = task.Title;
-            existingTask.Description = task.Description;
-            existingTask.Status = task.Status;
-            existingTask.DueDate = task.DueDate;
-
+            _context.TaskItems.Update(task); // Mark entity as modified
             await _context.SaveChangesAsync();
-            return existingTask;
+            return true; // Or handle exceptions
         }
 
         public async Task<bool> UpdateTaskItemStatus(int id, TaskItemStatus newStatus)

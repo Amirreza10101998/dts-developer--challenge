@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domain.Entities;
@@ -9,7 +10,8 @@ using TaskManagement.Domain.Entities;
 namespace TaskManagement.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/task")]
+    [EnableCors("AllowAngular")]
     public class TaskController : ControllerBase
     {
         private readonly ITaskService _taskService;
@@ -107,7 +109,7 @@ namespace TaskManagement.API.Controllers
                 if (id <= 0) return BadRequest("Invalid ID format");
                 if (!ModelState.IsValid) return BadRequest(ModelState);
 
-                var result = await _taskService.UpdateTaskItemStatus(id, task.Status);
+                var result = await _taskService.UpdateTaskItem(id, task);
                 return result ? Ok() : NotFound();
             }
             catch (Exception ex)

@@ -1,0 +1,62 @@
+<div class="container">
+    <!-- Previous Card -->
+    <div class="card">
+        <div class="card-header bg-primary text-white d-flex align-items-center gap-2">
+            <span class="material-icons">assignment</span>
+            <h5 class="mb-0">Task Manager</h5>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Welcome to Task Manager</h4>
+            <p class="card-text">Here you can view your tasks, add new ones, edit existing tasks, and manage your daily productivity.</p>
+            <a (click)="navigateToAddTask()" class="btn btn-primary btn-with-icon">
+                <span class="material-icons">add</span> 
+                Add New Task
+            </a>
+        </div>
+    </div>
+
+    <!-- Task Table -->
+     <div class="d-flex align-items-center gap-2 mb-1">
+        <span  class="material-icons pb-2">menu_book</span>
+        <h4 *ngIf="!isLoading">Your Tasks</h4>
+     </div>
+    <div class="table-responsive">
+        <table class="table table-hover"  *ngIf="tasks">
+            <thead>
+                <tr class="text-center" *ngIf="tasks.length > 0">
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let task of tasks">
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.dueDate | date:'dd/MM/yyyy HH:mm' }}</td>
+                    <td>
+                        <span class="badge" [class]="getStatusClass(task.status)">
+                          {{ getStatusText(task.status) }}
+                        </span>
+                      </td>
+                    <td>
+                        <button (click)="task.id && naviageteToEditTask(task.id)" class="btn btn-sm btn-outline-primary me-1">
+                            <span class="material-icons">edit</span>
+                        </button>
+                        <button (click)="task.id && deleteTask(task.id)" class="btn btn-sm btn-outline-danger">
+                            <span class="material-icons">delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Empty rows to demonstrate table layout -->
+                <tr class="table-light">
+                    <td colspan="5" class="text-center text-muted">
+                        <span style="vertical-align: middle;"> Add more tasks to see them here</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
