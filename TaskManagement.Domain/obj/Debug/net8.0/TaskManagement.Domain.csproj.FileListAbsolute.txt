@@ -9,3 +9,4 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/obj/Debug/net8.0/refint/TaskManagement.Domain.dll
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/obj/Debug/net8.0/ref/TaskManagement.Domain.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/obj/Debug/net8.0/TaskManagement.Domain.sourcelink.json

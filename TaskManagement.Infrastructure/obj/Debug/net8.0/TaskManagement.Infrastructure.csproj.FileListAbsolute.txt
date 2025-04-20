@@ -17,3 +17,4 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.genruntimeconfig.cache
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/ref/TaskManagement.Infrastructure.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.sourcelink.json

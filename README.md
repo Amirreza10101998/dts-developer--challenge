@@ -27,22 +27,29 @@ A system for HMCTS caseworkers to manage their tasks with API and frontend compo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Amirreza10101998/dts-developer--challenge
-   cd task-management-system
+   git clone https://github.com/Amirreza10101998/dts-developer--challenge.git
+   cd dts-developer--challenge
  
 2. Backend Setup: 
-   cd TaskManagement.Api
-   dotnet restore
-   dotnet ef database update 
-   dotnet run
+- cd TaskManagement.API
+- dotnet restore
+- dotnet ef database update 
+ -dotnet run
 
 3. Frontend setup:
-   cd ../task-management-ui
-   npm install
-   npm start
+ - cd ../task-manager-ui
+ - npm install
+ - ng serve 
 
 ## Running Tests
+ - cd TaskManagement.Tests
+ - dotnet test
 
-cd TaskManagement.Tests
-dotnet test
-
+## API Documentation
+Endpoints
+Method	Endpoint	Description
+GET	/api/v1/task	Get all tasks
+GET	/api/v1/task/{id}	Get single task by ID
+POST	/api/v1/task	Create new task
+PATCH	/api/v1/task/{id}	Update task status
+DELETE	/api/v1/task/{id}	Delete task

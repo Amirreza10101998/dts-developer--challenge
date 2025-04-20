@@ -13,3 +13,4 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/refint/TaskManagement.Application.dll
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/ref/TaskManagement.Application.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/obj/Debug/net8.0/TaskManagement.Application.sourcelink.json

@@ -168,3 +168,4 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Tests/bin/Debug/net8.0/TaskManagement.Api.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Tests/bin/Debug/net8.0/TaskManagement.Domain.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Tests/bin/Debug/net8.0/TaskManagement.Infrastructure.pdb
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Tests/obj/Debug/net8.0/TaskManagement.Tests.sourcelink.json

@@ -168,4 +168,5 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/obj/Debug/net8.0/TaskManagement.API.pdb
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/obj/Debug/net8.0/TaskManagement.API.genruntimeconfig.cache
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/obj/Debug/net8.0/ref/TaskManagement.API.dll
+/Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/obj/Debug/net8.0/TaskManagement.API.sourcelink.json
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Api/obj/Debug/net8.0/TaskMana.88DA88F4.Up2Date
