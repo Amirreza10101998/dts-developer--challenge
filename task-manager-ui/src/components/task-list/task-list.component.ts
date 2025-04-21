@@ -7,10 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-task-list',
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, MatProgressSpinnerModule ],
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, MatProgressSpinnerModule, MatSlideToggleModule],
   standalone: true,
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
@@ -19,8 +20,10 @@ export class TaskListComponent{
 
   constructor(private taskService: TaskService) {}
   tasks: TaskItem[] = [];
+  completedTasks: TaskItem[] = [];
   displayedColumns: string[] = ['status', 'title', 'dueDate'];
   isLoading: boolean = false;
+  completedTaskView: boolean = false;
 
   ngOnInit() {
     this.loadTaskItems();
@@ -31,7 +34,7 @@ export class TaskListComponent{
     this.taskService.getAll().subscribe({
       next: (data) => {
         this.tasks = data;
-        console.log('Tasks loaded:', this.tasks);
+        this.filterCompletedTasks();
         this.isLoading = false;
       },
       error: (error) => {
@@ -63,6 +66,15 @@ export class TaskListComponent{
   naviageteToEditTask(taskId: number) {
     window.location.href = `/tasks/edit/${taskId}`;
   };
+
+  filterCompletedTasks() {
+    this.completedTasks = this.tasks.filter(task => task.status === 2);
+  }
+
+  toggleCompletedTaskView() {
+    this.completedTaskView = !this.completedTaskView; // Toggle the value
+    // Perform any other actions needed
+  }
   
   getStatusText(status: number): string {
     switch(status) {

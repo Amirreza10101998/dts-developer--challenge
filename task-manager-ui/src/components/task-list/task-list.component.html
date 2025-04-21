@@ -16,11 +16,18 @@
     </div>
 
     <!-- Task Table -->
-     <div class="d-flex align-items-center gap-2 mb-1">
-        <span  class="material-icons pb-2">menu_book</span>
-        <h4 *ngIf="!isLoading">Your Tasks</h4>
-     </div>
-    <div class="table-responsive">
+    <div class="d-flex justify-content-between align-items-center mb-1">
+        <div class="d-flex align-items-center gap-2">
+          <span class="material-icons pb-2">menu_book</span>
+          <h4 *ngIf="!isLoading">Your Tasks</h4>
+        </div>
+        <div class="form-check form-switch">
+          <input style="cursor: pointer;" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                 [checked]="completedTaskView" (change)="toggleCompletedTaskView()">
+          <label style="cursor: pointer;" class="form-check-label" for="flexSwitchCheckDefault">Show/Hide Completed</label>
+        </div>
+      </div>
+    <div class="table-responsive" *ngIf="!completedTaskView">
         <table class="table table-hover"  *ngIf="tasks">
             <thead>
                 <tr class="text-center" *ngIf="tasks.length > 0">
@@ -59,4 +66,46 @@
             </tbody>
         </table>
     </div>
+
+    <div class="table-responsive" *ngIf="completedTaskView">
+        <table class="table table-hover"  *ngIf="completedTasks && completedTaskView">
+            <thead>
+                <tr class="text-center" *ngIf="completedTasks.length > 0">
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let completedTask of completedTasks">
+                    <td>{{ completedTask.title }}</td>
+                    <td>{{ completedTask.description }}</td>
+                    <td>{{ completedTask.dueDate | date:'dd/MM/yyyy HH:mm' }}</td>
+                    <td>
+                        <span class="badge" [class]="getStatusClass(completedTask.status)">
+                          {{ getStatusText(completedTask.status) }}
+                        </span>
+                      </td>
+                    <td>
+                        <button (click)="completedTask.id && naviageteToEditTask(completedTask.id)" class="btn btn-sm btn-outline-primary me-1">
+                            <span class="material-icons">edit</span>
+                        </button>
+                        <button (click)="completedTask.id && deleteTask(completedTask.id)" class="btn btn-sm btn-outline-danger">
+                            <span class="material-icons">delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Empty rows to demonstrate table layout -->
+                <tr class="table-light">
+                    <td colspan="5" class="text-center text-muted">
+                        <span style="vertical-align: middle;"> Add more tasks to see them here</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
 </div>

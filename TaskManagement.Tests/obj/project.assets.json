@@ -2512,7 +2512,7 @@
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "TaskManagement.Api/1.0.0": {
+      "TaskManagement.API/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -2522,10 +2522,10 @@
           "TaskManagement.Infrastructure": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/TaskManagement.Api.dll": {}
+          "bin/placeholder/TaskManagement.API.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TaskManagement.Api.dll": {}
+          "bin/placeholder/TaskManagement.API.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -7696,10 +7696,10 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "TaskManagement.Api/1.0.0": {
+    "TaskManagement.API/1.0.0": {
       "type": "project",
-      "path": "../TaskManagement.Api/TaskManagement.Api.csproj",
-      "msbuildProject": "../TaskManagement.Api/TaskManagement.Api.csproj"
+      "path": "../TaskManagement.API/TaskManagement.API.csproj",
+      "msbuildProject": "../TaskManagement.API/TaskManagement.API.csproj"
     },
     "TaskManagement.Application/1.0.0": {
       "type": "project",
@@ -7722,7 +7722,7 @@
       "FluentAssertions >= 8.2.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "Moq >= 4.18.4",
-      "TaskManagement.Api >= 1.0.0",
+      "TaskManagement.API >= 1.0.0",
       "TaskManagement.Application >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.5.3",
@@ -7754,8 +7754,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Api/TaskManagement.Api.csproj": {
-              "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Api/TaskManagement.Api.csproj"
+            "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/TaskManagement.API.csproj": {
+              "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.API/TaskManagement.API.csproj"
             },
             "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj": {
               "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj"
