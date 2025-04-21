@@ -44,12 +44,3 @@ A system for HMCTS caseworkers to manage their tasks with API and frontend compo
 ## Running Tests
  - cd TaskManagement.Tests
  - dotnet test
-
-## API Documentation
-Endpoints
-Method	Endpoint	Description
-GET	/api/v1/task	Get all tasks
-GET	/api/v1/task/{id}	Get single task by ID
-POST	/api/v1/task	Create new task
-PATCH	/api/v1/task/{id}	Update task status
-DELETE	/api/v1/task/{id}	Delete task
