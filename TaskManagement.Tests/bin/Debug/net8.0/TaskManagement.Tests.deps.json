@@ -11,7 +11,7 @@
           "FluentAssertions": "8.2.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "Moq": "4.18.4",
-          "TaskManagement.Api": "1.0.0",
+          "TaskManagement.API": "1.0.0",
           "TaskManagement.Application": "1.0.0",
           "coverlet.collector": "6.0.0",
           "xunit": "2.5.3",
@@ -1557,7 +1557,7 @@
         }
       },
       "xunit.runner.visualstudio/2.5.3": {},
-      "TaskManagement.Api/1.0.0": {
+      "TaskManagement.API/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "8.0.10",
           "Swashbuckle.AspNetCore": "6.6.2",
@@ -1565,7 +1565,7 @@
           "TaskManagement.Infrastructure": "1.0.0"
         },
         "runtime": {
-          "TaskManagement.Api.dll": {
+          "TaskManagement.API.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2529,7 +2529,7 @@
       "path": "xunit.runner.visualstudio/2.5.3",
       "hashPath": "xunit.runner.visualstudio.2.5.3.nupkg.sha512"
     },
-    "TaskManagement.Api/1.0.0": {
+    "TaskManagement.API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

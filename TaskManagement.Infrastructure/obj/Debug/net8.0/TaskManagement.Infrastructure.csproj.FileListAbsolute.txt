@@ -18,3 +18,23 @@
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.genruntimeconfig.cache
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/ref/TaskManagement.Infrastructure.dll
 /Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.sourcelink.json
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Infrastructure.deps.json
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Infrastructure.runtimeconfig.json
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Infrastructure.dll
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Infrastructure.pdb
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Application.dll
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Domain.dll
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Application.pdb
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/bin/Debug/net8.0/TaskManagement.Domain.pdb
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.csproj.AssemblyReference.cache
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.AssemblyInfoInputs.cache
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.AssemblyInfo.cs
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.sourcelink.json
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskMana.BCA0E1A6.Up2Date
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.dll
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/refint/TaskManagement.Infrastructure.dll
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.pdb
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/TaskManagement.Infrastructure.genruntimeconfig.cache
+/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/Debug/net8.0/ref/TaskManagement.Infrastructure.dll
