@@ -3519,11 +3519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+      "projectUniqueName": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
       "projectName": "TaskManagement.Infrastructure",
-      "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
+      "projectPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/TaskManagement.Infrastructure.csproj",
       "packagesPath": "/Users/amer/.nuget/packages/",
-      "outputPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Infrastructure/obj/",
+      "outputPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/amer/.nuget/NuGet/NuGet.Config"
@@ -3538,11 +3538,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj": {
-              "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj"
+            "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj": {
+              "projectPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Application/TaskManagement.Application.csproj"
             },
-            "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {
-              "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj"
+            "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+              "projectPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj"
             }
           }
         }

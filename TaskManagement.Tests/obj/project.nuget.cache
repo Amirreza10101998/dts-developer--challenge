@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W3TGAEERPEA=",
+  "dgSpecHash": "CO+DG2GXSFA=",
   "success": true,
-  "projectFilePath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Tests/TaskManagement.Tests.csproj",
+  "projectFilePath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Tests/TaskManagement.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/amer/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/amer/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",

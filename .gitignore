@@ -1,0 +1,21 @@
+# === .NET (.NET Core / ASP.NET) ===
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+*.dll
+*.pdb
+*.exe
+
+# === Angular (Node.js + Angular CLI) ===
+node_modules/
+dist/
+.angular/
+out-tsc/
+src/environments/*.ts
+
+# === IDEs & OS ===
+.vscode/
+.idea/
+.DS_Store

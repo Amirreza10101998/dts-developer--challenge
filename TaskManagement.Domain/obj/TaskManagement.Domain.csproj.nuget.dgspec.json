@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {}
+    "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {}
   },
   "projects": {
-    "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {
+    "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj",
+        "projectUniqueName": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj",
         "projectName": "TaskManagement.Domain",
-        "projectPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj",
+        "projectPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/TaskManagement.Domain.csproj",
         "packagesPath": "/Users/amer/.nuget/packages/",
-        "outputPath": "/Users/amer/Desktop/dts-developer--challenge/TaskManagement.Domain/obj/",
+        "outputPath": "/Users/amer/Desktop/Personal Projects/dts-developer--challenge/TaskManagement.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/amer/.nuget/NuGet/NuGet.Config"
