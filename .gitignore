@@ -1,6 +1,8 @@
 # === .NET (.NET Core / ASP.NET) ===
 bin/
 obj/
+bin 2/
+obj 2/
 *.user
 *.suo
 *.vs/
